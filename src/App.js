@@ -1,10 +1,36 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {getData} from './api/products'
 
+import imageScript from './main_javascript.js'
 
+import store from './store'
+
+console.log('nice', store)
 class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+        products:[]
+        
+        
+    }
+
+  }
+  componentWillMount(){
+    store.subscribe(()=>{
+        const appState = store.getState()
+        this.setState({
+            products:appState.products
+        })
+    })
+    getData()
+  }
+
+
   render() {
+    console.log('product',this.state.products)
     return (
       <div className="App">
 
@@ -173,27 +199,42 @@ class App extends Component {
                                     <option value="Egypt">Egypt</option>
                                     <option value="El Salvador">El Salvador</option>
                                     <option value="Equatorial Guinea">Equatorial Guinea</option>
-                                    <option value="Eritrea">Eritrea</option>
+                                    <option value="Eritrea">Eritrea</option> 
                                 </select>
                             </div>
                         </div>
                         <div className="images">
-                             <div className="productImage">
-                                <a href="#">
-                                    <div className="love"></div>
-                                </a>
-                                <a href="#">
-                                    <div className="hamb"></div>
-                                </a>
-                                <div className="productInfo">
-                                    <ul>
-                                        <li>Description</li>
-                                        <li>Title</li>
-                                        <li>Price</li>
-                                    </ul>
-                                </div>
-                            </div> 
-                        </div>
+                              
+                       {this.state.products.map(product=>(
+
+                        
+                          
+                       
+                       <div className="outerProductDiv">
+                        <div className="productImage">
+                          <img src={product.Images[0].url_570xN} className="imageSize" />
+                    <a href="#">
+                        <div className="love"></div>
+                    </a>
+                    <a href="#">
+                        <div className="hamb"></div>
+                    </a>
+                    </div>
+                 
+                  
+                    <div className="productInfo">
+                        <ul>
+                            <li>{product.description}</li>
+                            <li>{product.Shop.shop_name}</li>
+                            <li>{product.price}</li>
+                        </ul>
+                    </div>
+                  </div>
+
+                
+
+                ))}
+                  </div>
                     </div>
                 </div>
                 </div>

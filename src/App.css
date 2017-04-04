@@ -211,7 +211,7 @@ li {
     width: 197px;
     height: 10px;
     margin-left: 8px;
-    margin-top: -20px;
+    margin-top: -1px;
     margin-bottom: 122px;
 }
 
@@ -248,7 +248,7 @@ li {
     flex-wrap: wrap;
     width: 121px;
     height: 26px;
-    margin-top: -135px;
+    margin-top:  -128px;
     margin-left: -2px;
     margin-right: 3px;
     height: 33px;
@@ -278,7 +278,7 @@ li {
     border-bottom: 1px solid #a8a6a6;
     width: 197px;
     height: 10px;
-    margin-top: -400px;
+    margin-top:  -394px;
     margin-left: 8px;
 }
 
@@ -313,7 +313,7 @@ li {
     flex-direction: row;
     width: 67px;
     height: 26px;
-    margin-top: -59px;
+    margin-top: -48px;
     margin-left: 44px;
 }
 
@@ -470,14 +470,23 @@ li {
 }
 
 .productInfo {
+       display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
+    -ms-flex-item-align: end;
     align-self: flex-end;
     background: white;
     color: black;
     height: 50px;
     width: 100%;
-    margin-top: 202px;
+    width: 266px;
+    /* background: gray; */
+    margin-top: 8px;
+    margin-left: 29px;
 }
 
 .productInfo>ul {
@@ -522,7 +531,7 @@ element.style {
     background-size: 300px 300px;
 }
 
-.productImage:hover .love {
+/*.productImage:hover .love {
     background-image: url("../images/heart.png");
     background-size: 20px;
     background-repeat: no-repeat;
@@ -534,9 +543,9 @@ element.style {
     margin-right: 10px;
     margin-left: 200px;
     border-radius: 1px;
-}
+}*/
 
-.productImage:hover .hamb {
+/*.productImage:hover .hamb {
     background-image: url("../images/hamburger.png");
     background-size: 20px;
     background-repeat: no-repeat;
@@ -547,11 +556,23 @@ element.style {
     height: 20px;
     width: 27px;
     border-radius: 1px;
-}
+}*/
 
-.love {
-    display: none;
-    /*background-image: url("images/heart.png");
+/*.productImage{
+    
+  background-size: 260px 266px;
+        background-position-y: -14px; 
+        background-repeat: no-repeat;
+}*/
+
+.imageSize{
+    height: 260px;
+    width: 266px
+}
+/*.love {*/
+
+  
+  /*  background-image: url("images/heart.png");
    background-size: 20px;
     background-repeat: no-repeat;
    float: left; 
@@ -560,12 +581,12 @@ element.style {
     margin-top: 10px;
     margin-right: 10px;
     margin-left: 200px;
-    border-radius: 1px;*/
-}
-
+    border-radius: 1px;
+}*/
+/*
 .hamb {
-    display: none;
-    /*background-image: url("images/hamburger.png"); 
+   
+    background-image: url("images/hamburger.png"); 
     background-size: 20px;
     background-repeat: no-repeat;
     float: right; 
@@ -573,5 +594,6 @@ element.style {
     margin-right: 7px;
     height: 20px; 
     width:  27px;
-    border-radius: 1px;*/
-}
+    border-radius: 1px;
+}*/
+
